@@ -168,15 +168,15 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': False,
         },
-        'poe_generic': {
+        'cc_generic': {
             'handlers': ['console', 'logfile'],
             'level': 'DEBUG',
         },
-        'poe.models': {
+        'cc.models': {
             'handlers': ['console', 'logfile'],
             'level': 'DEBUG',
         },
-        'poe.tables': {
+        'cc.tables': {
             'handlers': ['console', 'logfile'],
             'level': 'DEBUG',
         },
