@@ -10,8 +10,8 @@ import xlrd # for excel workbooks
 ###
 import sys, os
 #from poetools_project.poe.common.character_tools import logger
-#proj_path = '/home/adam/workspace1/poe-client/poetools_project/'
-proj_path = '/Users/adam.green/Documents/workspace/cc-tools-pydev/cctoolsDjango'
+proj_path = '/home/adam/workspace1/CCTools/cctoolsDjango'
+#proj_path = '/Users/adam.green/Documents/workspace/cc-tools-pydev/cctoolsDjango'
 
 
 # This is so Django knows where to find stuff.
@@ -41,11 +41,13 @@ def upload_weapons():
                                              os.path.dirname(
                                                 os.path.abspath(__file__))
                                                 ),
-                                            'test_data',
-                                            'Cad Data Mar 2014.xlsx'
+                                            'cctoolsDjango/cctoolsDjango/data',
+                                            valid_game.generic_data
                                             )
         print("fname", fname)
         xl_workbook = xlrd.open_workbook(fname)
+        sheet_names = xl_workbook.sheet_names()
+        print('Sheet Names', sheet_names)
         #logger.warn("importing data for ", valid_game.name())
 
 def set_valid_games():
@@ -68,7 +70,7 @@ if __name__ == '__main__':
     pass
     print("hello world")
     logger.warn("log test ",)
-    #set_valid_games()
+    set_valid_games()
     upload_weapons()
     #print (logging.handlers) 
     pass
